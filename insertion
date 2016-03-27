@@ -1,0 +1,29 @@
+    
+def insertionSort(alist):
+   for index in range(1,len(alist)):
+
+     currentvalue = alist[index]
+     position = index
+
+     while position>0 and alist[position-1]>currentvalue:
+         alist[position]=alist[position-1]
+         position = position-1
+
+     alist[position]=currentvalue    
+    
+    
+    
+def createArray(size):
+    import random
+    array = []
+    for i in range(0,size):
+        array.append(int(random.uniform(-1000,1000)))
+    return array
+size = int(input("size ?"))
+alist = createArray(size)
+
+import time
+t_start = time.time()
+insertionSort(alist)
+t_end=time.time()
+print(" insertion sort karislastirma zamanı :", t_end-t_start)
